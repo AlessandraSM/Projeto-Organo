@@ -2,6 +2,7 @@
     background-color: #6278F7;
     text-align: center;
 }
+/*Deixando a img no formato responsivo*/
 .banner img {
     max-width: 100%;
 }
