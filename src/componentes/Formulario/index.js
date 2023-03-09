@@ -1,3 +1,4 @@
+import Button from "../Button";
 import CampoTexto from "../CampoTexto/index";
 import ListaSuspensa from "../ListaSuspensa";
 import "./Formulario.css";
@@ -18,8 +19,8 @@ function Formulario() {
         <CampoTexto label="Nome" placeholder="Digite seu nome" />
         <CampoTexto label="Cargo" placeholder="Digite seu cargo" />
         <CampoTexto label="Imagem" placeholder="Digite o endereço da imagem" />
-        <CampoTexto label="Time" placeholder="Insira um tempo" />
-        <ListaSuspensa itens={times}/>
+        <ListaSuspensa label="Times" itens={times} />
+        <Button>Criar Card</Button>
       </form>
     </section>
   );
