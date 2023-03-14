@@ -11,7 +11,7 @@ function CampoTexto(props) {
   // não posso alterar o valor direto por atribuição, é preciso passar pelo set
 
   const aoDigitado = (evento) => {
-   props.aoAlterado(evento.target.value)
+  props.aoAlterado(evento.target.value)
   };
 
   return (

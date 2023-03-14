@@ -4,8 +4,8 @@ import CampoTexto from "../CampoTexto/index";
 import ListaSuspensa from "../ListaSuspensa";
 import "./Formulario.css";
 
-function Formulario() {
-
+function Formulario(props) {
+//Acessando os valores de dentro do App (props)
   const times = [
     'Programação',
     'Front-End',
@@ -14,15 +14,22 @@ function Formulario() {
     'Inovação e Gestão'
   ]
 
+
   const [nome, setNome] = useState('')
   const [cargo, setCargo] = useState('')
   const [imagem, setImagem] = useState('')
   const [time, setTime] = useState('')
 
   const aoSalvar = (evento) =>{
+    //Criando nomes de objeto a ser impresso no console.log 
     evento.preventDefault()
-    console.log("fui chamado", nome, cargo, imagem, time)
+    props.aoColaboradorCadastrado({
+      nome, 
+      cargo, 
+      imagem, 
+      time})
   }
+  
 
   return (
     <section className="formulario">
