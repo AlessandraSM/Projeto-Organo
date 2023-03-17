@@ -54,13 +54,18 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Formulario
+      <Formulario nomeDosTimes={times.map((time) => time.nome)}
         aoColaboradorCadastrado={(colaborador) =>
           aoNovoColaboradoAdicionado(colaborador)
         }
       />
-      {times.map((time) => (
-        <Time key={time.nome} nome={time.nome} corPrimaria={time.corPrimaria} corSecundaria={time.corSegundaria} />
+      {times.map((time) => (<Time 
+        key={time.nome} 
+        nome={time.nome} 
+        corPrimaria={time.corPrimaria} 
+        corSecundaria={time.corSegundaria} 
+        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+        />
       ))}
     </div>
     //Dentro do Formulario eu passo a função responsável que recebe o NoboColaborador!

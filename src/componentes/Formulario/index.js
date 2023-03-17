@@ -6,15 +6,6 @@ import "./Formulario.css";
 
 function Formulario(props) {
 //Acessando os valores de dentro do App (props)
-  const times = [
-    'Programação',
-    'Front-End',
-    'Data Science', 
-    'Mobile',
-    'Inovação e Gestão'
-  ]
-
-
   const [nome, setNome] = useState('')
   const [cargo, setCargo] = useState('')
   const [imagem, setImagem] = useState('')
@@ -58,7 +49,7 @@ function Formulario(props) {
         <ListaSuspensa 
         obrigatorio={true}
         label="Times" 
-        itens={times} 
+        itens={props.nomeDosTimes} 
         valor={time}
         aoAlterado={valor => setTime(valor)}/>
         <Button>Criar Card</Button>
