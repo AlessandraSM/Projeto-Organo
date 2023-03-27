@@ -6,10 +6,10 @@ import "./Formulario.css";
 
 function Formulario(props) {
 //Acessando os valores de dentro do App (props)
-  const [nome, setNome] = useState('')
-  const [cargo, setCargo] = useState('')
-  const [imagem, setImagem] = useState('')
-  const [time, setTime] = useState('')
+  const [nome, setNome] = useState('');
+  const [cargo, setCargo] = useState('');
+  const [imagem, setImagem] = useState('');
+  const [time, setTime] = useState('');
 
   const aoSalvar = (evento) =>{
     //Criando nomes de objeto a ser impresso no console.log 
@@ -18,7 +18,12 @@ function Formulario(props) {
       nome, 
       cargo, 
       imagem, 
-      time})
+      time
+    })
+    // setNome('')
+    // setCargo('')
+    // setImagem('')
+    // setTime('')
   }
   
 
@@ -31,27 +36,27 @@ function Formulario(props) {
         label="Nome" 
         placeholder="Digite seu nome"
         valor={nome}
-        aoAlterado={valor => setNome(valor)}
+        aoAlterado={(valor) => setNome(valor)}
          />
         <CampoTexto 
         obrigatorio={true} 
         label="Cargo" 
         placeholder="Digite seu cargo"
         valor={cargo}
-        aoAlterado={valor => setCargo(valor)} 
+        aoAlterado={(valor) => setCargo(valor)} 
         />
         <CampoTexto 
         label="Imagem" 
         placeholder="Digite o endereço da imagem"
         valor={imagem}
-        aoAlterado={valor => setImagem(valor)}
+        aoAlterado={(valor) => setImagem(valor)}
         />
         <ListaSuspensa 
         obrigatorio={true}
         label="Times" 
         itens={props.nomeDosTimes} 
         valor={time}
-        aoAlterado={valor => setTime(valor)}/>
+        aoAlterado={(valor) => setTime(valor)}/>
         <Button>Criar Card</Button>
       </form>
     </section>

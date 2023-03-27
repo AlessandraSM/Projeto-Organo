@@ -59,7 +59,8 @@ function App() {
           aoNovoColaboradoAdicionado(colaborador)
         }
       />
-      {times.map((time) => (<Time 
+      {times.map((time) => (
+        <Time 
         key={time.nome} 
         nome={time.nome} 
         corPrimaria={time.corPrimaria} 
