@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Banner from "./componentes/Banner";
-import Formulario from "./componentes/Formulario";
-import Time from "./componentes/Time";
+import Banner from "./componentes/Banner/index.js";
+import Formulario from "./componentes/Formulario/index.js";
+import Time from "./componentes/Time/index.js";
 
 function App() {
   const times = [
@@ -46,7 +46,6 @@ function App() {
   //criando o estado do colaborador
 
   const aoNovoColaboradoAdicionado = (colaborador) => {
-    console.log(colaborador);
     setColaboradores([...colaboradores, colaborador]);
     //Copia o estado ex. 05 colaboradores e adiciona o 06 colaborador
   };
@@ -54,7 +53,8 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Formulario nomeDosTimes={times.map((time) => time.nome)}
+      <Formulario 
+        nomeDosTimes={times.map((time) => time.nome)}
         aoColaboradorCadastrado={(colaborador) =>
           aoNovoColaboradoAdicionado(colaborador)
         }
